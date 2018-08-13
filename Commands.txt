@@ -1,0 +1,96 @@
+Comandos del sistema
+En esta lección se explican los principales comandos que muestran información sobre la Raspberry Pi y el sistema perativo Raspbian. Todos estos comandos nos permitirán conocer todo lo que tiene nuestro dispositivo.
+
+ 
+
+pi@raspberrypi: ~ $ arch
+
+arch: muestra la arquitectura de la máquina
+ 
+
+pi@raspberrypi: ~ $ uname
+
+uname: muestra el nombre del sistema operativo
+ 
+
+pi@raspberrypi: ~ $ sudo raspi-config
+
+sudo raspi-config: ventana de configuración de Raspbian
+ 
+
+pi@raspberrypi: ~ $ cat /proc/cpuinfo
+
+cat [fichero]: muestra por pantalla el fichero especificado
+cat /proc/version: muestra por pantalla la versión del sistema operativo
+cat /proc/cpuinfo: muestra por pantalla la información de la CPU
+cat /proc/meminfo: muestra por pantalla el estado de la memoria
+ 
+
+pi@raspberrypi: ~ $ sudo top
+
+top: muestra los procesos activos
+ 
+
+pi@raspberrypi: ~ $ vcgencmd measure_temp
+
+vcgencmd measure_temp: muestra la temperatura de la CPU
+ 
+
+pi@raspberrypi: ~ $ lusb
+
+lusb: visualizar los dispositivos USB conectados
+ 
+
+pi@raspberrypi: ~ $ history
+
+history: muestra el historial de comandos introducidos
+history -c: limpia el historial de comandos introducidos
+ 
+
+pi@raspberrypi: ~ $ date
+
+date: muestra la fecha del sistema
+ 
+
+Algunos comandos admiten varios parámetros para mostrar diferentes comportamientos. Por ejemplo, el comando que muestra el almanaque puede recibir parámetros para mostrar un año en concreto o una determinada cantidad de meses, etc.
+
+pi@raspberrypi: ~ $ cal
+pi@raspberrypi: ~ $ cal 2017
+pi@raspberrypi: ~ $ cal 07 2017
+pi@raspberrypi: ~ $ cal -A 3 -B 3 10 2017
+
+cal: muestra el almanaque de la fecha actual
+cal 2017: muestra el almanaque del 2017
+cal 07 2017: muestra el almanaque de julio de 2017
+cal -A 3 -B 2 10 2017: muestra el almanaque de octubre de 2017 y 3 meses antes y 2 meses después
+ 
+
+Viendo lo anterior, es necesario disponer de un manual para entender todas las posibilidades que otorgan los comandos. Para ello, disponemos comando man que muestra el manual de un comando.
+
+pi@raspberrypi: ~ $ man cal
+
+man [comando]: muestra el manual del comando especificado
+man cal: muestra el manual para el comando calendario
+ 
+
+Para apagar, reiniciar o proceder a un apagado  planificado de la máquina, podemos utilizar los siguientes comandos.
+
+pi@raspberrypi: ~ $ shutdown -h now
+pi@raspberrypi: ~ $ shutdown -h 10:30 &
+pi@raspberrypi: ~ $ shutdown -c
+pi@raspberrypi: ~ $ shutdown -r now
+
+shutdown -h now: apagar la máquina
+shutdown -h 10:30 &: planificar un apagado de la máquina a las 10:30 (& es en segundo plano)
+shutdown -c: cancelar un apagado planificado
+shutdown -r now: reiniciar la máquina
+ 
+
+pi@raspberrypi: ~ $ logout
+
+logout: cerrar la sesión del usuario
+ 
+
+pi@raspberrypi: ~ $ exit
+
+exit: cerrar la terminal
